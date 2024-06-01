@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { Box, Button, Container, Heading, VStack, StackDivider } from '@chakra-ui/react';
+import TicketList from './components/TicketList';
+import NewTicketForm from './components/NewTicketForm';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    const [tickets, setTickets] = useState([]);
+    const [showForm, setShowForm] = useState(false);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    const addTicket = (ticket) => {
+        setTickets([...tickets, ticket]);
+    };
 
-export default App
+    const removeTicket = (index) => {
+        setTickets(tickets.filter((_,i) => i !== index));
+    }
+
+    return (
+        <Container maxW="container.md" py={4}>
+            <Heading as="h1" mb={4}>Gerenciamento de Tickets</Heading>
+            
+            <Button mb={4} colorScheme="teal" onClick={() => setShowForm(!showForm)}>
+                Novo Ticket
+            </Button>
+
+            {showForm && <NewTicketForm addTicket={addTicket} />}
+
+            <TicketList tickets={tickets}  removeTicket={removeTicket} />
+        </Container>
+    );
+};
+
+export default App;
