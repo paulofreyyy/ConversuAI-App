@@ -50,7 +50,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#" title="defina o titulo do link">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/74430831?v=4" width="100px;" alt="Foto do Paulo Frey no GitHub"/><br>
         <sub>
           <b>Paulo Frey</b>
         </sub>
