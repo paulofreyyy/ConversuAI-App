@@ -73,7 +73,7 @@ const NewTicketForm = ({ addTicket, onClose }) => {
                         />
                     </FormControl>
                     
-                    <Button type="submit" onClick={onClose} colorScheme="teal">
+                    <Button type="submit" onClick={onClose} colorScheme="orange">
                         Adicionar Ticket
                     </Button>
                 </VStack>

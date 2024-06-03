@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
-import {Modal, Box, Button, Container, Heading, VStack, StackDivider, useDisclosure, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody } from '@chakra-ui/react';
+import {Text,Flex,Modal, Box, Button, Container, Heading, useDisclosure, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, SimpleGrid } from '@chakra-ui/react';
 import TicketList from './components/TicketList';
 import NewTicketForm from './components/NewTicketForm';
+import TicketDrawer from './components/TicketDrawer'
+import Cards from './components/Cards'
+import SideMenu from './components/SideMenu'
 
 const App = () => {
     const [tickets, setTickets] = useState([]);
-    const [showForm, setShowForm] = useState(false);
+    const [selectedTicket, setSelectedTicket] = useState();
     const {isOpen, onOpen, onClose} = useDisclosure();
+    const{
+        isOpen: isDrawerOpen,
+        onOpen: onDrawerOpen,
+        onClose: onDrawerClose,
+    }    = useDisclosure();
 
     const addTicket = (ticket) => {
         setTickets([...tickets, ticket]);
@@ -16,28 +24,45 @@ const App = () => {
         setTickets(tickets.filter((_,i) => i !== index));
     }
 
+    const openDrawer = (ticket) => {
+        setSelectedTicket(ticket);
+        onDrawerOpen();
+    }
+
     return (
-        <Container maxW="container.md" py={4}>
-            <Heading as="h1" mb={4}>Gerenciamento de Tickets</Heading>
-            
-            <Button mb={4} colorScheme="teal" onClick={onOpen}>
-                Novo Ticket
-            </Button>
+        <Flex>
+            <SideMenu />
+            <Box ml="200px" width="calc(100% - 200px)">
+                <Container maxW="container.lg" py={4}>
+                    <Button mb={4} colorScheme="orange" onClick={onOpen}>
+                        Novo Ticket
+                    </Button>
 
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Novo Ticket</ModalHeader>
-                    <ModalCloseButton />
+                    
+                    <Cards tickets={tickets} />
 
-                    <ModalBody>
-                        <NewTicketForm addTicket={addTicket} onClose={onClose} />
-                    </ModalBody>
-                </ModalContent>
-            </ Modal>
+                    <Heading size="md" mb="4" color="DarkViolet">Listagem de Tickets</Heading>
+                    <TicketList tickets={tickets}  removeTicket={removeTicket}  openDrawer={openDrawer} />
 
-            <TicketList tickets={tickets}  removeTicket={removeTicket} />
-        </Container>
+                    <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                            <ModalHeader>Novo Ticket</ModalHeader>
+                            <ModalCloseButton />
+
+                            <ModalBody>
+                                <NewTicketForm addTicket={addTicket} onClose={onClose} />
+                            </ModalBody>
+                        </ModalContent>
+                    </ Modal>
+
+                    {selectedTicket && (
+                        <TicketDrawer isOpen={isDrawerOpen} onClose={onDrawerClose} ticket={selectedTicket}/>
+                    )}
+                </Container>
+            </Box>
+        </Flex>
+
     );
 };
 
