@@ -1,4 +1,3 @@
-// components/Sidebar.js
 import React from 'react';
 import { Drawer,Image, Box, VStack, Button, Text, useDisclosure, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody } from '@chakra-ui/react';
 import { FaHome, FaTicketAlt, FaUser, FaCog,FaBars } from 'react-icons/fa';

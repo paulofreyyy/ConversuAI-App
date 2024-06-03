@@ -1,4 +1,3 @@
-// src/components/TicketList.jsx
 import React from "react";
 import { Tag,HStack,Box, VStack, Text, StackDivider, Button, SimpleGrid, Tooltip } from '@chakra-ui/react';
 import { FaTrash } from 'react-icons/fa';
