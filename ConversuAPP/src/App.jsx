@@ -32,7 +32,7 @@ const App = () => {
     return (
         <Flex>
             <SideMenu />
-            <Box ml="200px" width="calc(100% - 200px)">
+            <Box ml={{ base:0, md: "250px"}} width={{ base: "100%", md: "calc(100% - 250px)" }} p={4}>
                 <Container maxW="container.lg" py={4}>
                     <Button mb={4} colorScheme="orange" onClick={onOpen}>
                         Novo Ticket
