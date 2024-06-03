@@ -40,13 +40,13 @@ const App = () => {
 
                     <Cards tickets={tickets} />
 
-                    <Heading size="md" mb="4" color="DarkViolet">Listagem de Tickets</Heading>
+                    <Heading size="md" mb="4" color="#251d8d">Listagem de Tickets</Heading>
                     <TicketList tickets={tickets}  removeTicket={removeTicket}  openDrawer={openDrawer} />
 
                     <Modal isOpen={isOpen} onClose={onClose}>
                         <ModalOverlay />
                         <ModalContent>
-                            <ModalHeader>Novo Ticket</ModalHeader>
+                            <ModalHeader fontWeight="bold" color="#251d8d">Novo Ticket</ModalHeader>
                             <ModalCloseButton />
 
                             <ModalBody>

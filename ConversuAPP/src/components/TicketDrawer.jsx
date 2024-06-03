@@ -7,7 +7,7 @@ const TicketDrawer =({ isOpen, onClose, ticket, removeTicket }) => {
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader color="DarkViolet" fontWeight="bold">Detalhes do Ticket</DrawerHeader>
+                <DrawerHeader color="#251d8d" fontWeight="bold">Detalhes do Ticket</DrawerHeader>
 
                 <DrawerBody>
                     <VStack align="start" spacing={4}>

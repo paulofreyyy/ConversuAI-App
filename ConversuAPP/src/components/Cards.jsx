@@ -9,7 +9,7 @@ const Cards = ({ tickets }) => {
     return (
         <SimpleGrid columns={{ sm:1, md: 3 }} spacing={10} mb={10}>
             <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" display="flex" flexDirection="column" justifyContent="space-between" height="100%">
-                <Heading as="h4" size="md" color="DarkViolet">Sua operação</Heading>
+                <Heading as="h4" size="md" color="#251d8d">Sua operação</Heading>
                 <Text color="gray">Quantidade de tickets realizados hoje</Text>
                 <br></br>
                 <Flex justifyContent="space-between"  px={10}>
@@ -26,7 +26,7 @@ const Cards = ({ tickets }) => {
                 </Flex>
             </Box>
             <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" display="flex" flexDirection="column" justifyContent="space-between" height="100%">
-                <Heading as="h4" size="md" color="DarkViolet">Seus atendimentos</Heading>
+                <Heading as="h4" size="md" color="#251d8d">Seus atendimentos</Heading>
                 <Text  color="gray">Resumo dos tickets por produtos no momento</Text>
                 <br></br>
                 <Flex justifyContent="space-between"  px={10}>
@@ -43,7 +43,7 @@ const Cards = ({ tickets }) => {
                 </Flex>
             </Box>
             <Box p={4} shadow="md" borderWidth="1px" borderRadius="md" display="flex" flexDirection="column" justifyContent="space-between" height="100%">
-                <Heading as="h4" size="md" color="DarkViolet">Jornada</Heading>
+                <Heading as="h4" size="md" color="#251d8d">Jornada</Heading>
                 <Text  color="gray">Resumo da sua jornada diária</Text>
                 <br></br>
                 <Flex justifyContent="space-between"  px={10}>
