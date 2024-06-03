@@ -38,7 +38,6 @@ const App = () => {
                         Novo Ticket
                     </Button>
 
-                    
                     <Cards tickets={tickets} />
 
                     <Heading size="md" mb="4" color="DarkViolet">Listagem de Tickets</Heading>
@@ -57,7 +56,7 @@ const App = () => {
                     </ Modal>
 
                     {selectedTicket && (
-                        <TicketDrawer isOpen={isDrawerOpen} onClose={onDrawerClose} ticket={selectedTicket}/>
+                        <TicketDrawer isOpen={isDrawerOpen} onClose={onDrawerClose} ticket={selectedTicket} removeTicket={removeTicket}/>
                     )}
                 </Container>
             </Box>

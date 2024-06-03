@@ -1,30 +1,42 @@
 import React from "react";
 import { Text, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, VStack } from "@chakra-ui/react";
 
-const TicketDrawer =({ isOpen, onClose, ticket }) => {
+const TicketDrawer =({ isOpen, onClose, ticket, removeTicket }) => {
     return (
         <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>Detalhes do Ticket</DrawerHeader>
+                <DrawerHeader color="DarkViolet" fontWeight="bold">Detalhes do Ticket</DrawerHeader>
 
                 <DrawerBody>
                     <VStack align="start" spacing={4}>
                         <Text>
-                            <strong>Email:</strong> {ticket.email}
+                            <strong>Email:</strong> 
+                            <br />
+                            {ticket.email}
                         </Text>
                         <Text>
-                            <strong>Assunto:</strong> {ticket.subject}
+                            <strong>Assunto:</strong>
+                            <br />
+                             {ticket.subject}
                         </Text>
                         <Text>
-                            <strong>Produto:</strong> {ticket.product}
+                            <strong>Produto:</strong> 
+                            <br />
+                            {ticket.product}
                         </Text>
                         <Text>
-                            <strong>Descrição:</strong> {ticket.description}
+                            <strong>Descrição:</strong> 
+                            <br />
+                            {ticket.description}
                         </Text>
                     </VStack>
                 </DrawerBody>
+
+                <DrawerFooter>
+                    <Button colorScheme="orange">Responder</Button>
+                </DrawerFooter>
             </DrawerContent>
         </Drawer>
     )

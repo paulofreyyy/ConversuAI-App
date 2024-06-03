@@ -1,6 +1,7 @@
 // src/components/TicketList.jsx
 import React from "react";
 import { Tag,HStack,Box, VStack, Text, StackDivider, Button, SimpleGrid, Tooltip } from '@chakra-ui/react';
+import { FaTrash } from 'react-icons/fa';
 
 const TicketList = ({ tickets, removeTicket, openDrawer }) => {
     return (
@@ -17,7 +18,7 @@ const TicketList = ({ tickets, removeTicket, openDrawer }) => {
                                     removeTicket(index);
                                     e.stopPropagation();
                                 }}>
-                                    Excluir
+                                    <FaTrash />
                                 </Button>
                             </HStack>
 
