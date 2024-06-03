@@ -8,8 +8,7 @@
 
 <img src="https://github.com/paulofreyyy/ConversuAI-App/assets/74430831/a235b309-7e1f-4662-909f-ff02885c1abf" alt="Exemplo imagem">
 
-
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Projeto focado no gerenciamento de tickets e chamados, em seu primeiro momento é possível criar um ticket e ver seus detalhes, em suas próximas versões será possível efetuar login e manter um histórico do chamado, assim como implementações de IA.
 
 ### Ajustes e melhorias
 
